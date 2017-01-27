@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // bundle 進入點
@@ -22,7 +23,10 @@ module.exports = {
     }),
     // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
     // 根據調用次數指定 module 和 chunk 的 id。越常用的 id 較小（短）的 id。這使得 id 可以預測，可以減少檔案的大小
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
 
   // 設定檔案選項

@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   // bundle 進入點
@@ -9,5 +10,15 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     // bundle 檔名
     filename: 'bundle.js'
-  }
+  },
+
+  // 使用 webpack plugins
+  plugins: [
+    // https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 };

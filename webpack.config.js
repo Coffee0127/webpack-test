@@ -19,6 +19,9 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
+    // 根據調用次數指定 module 和 chunk 的 id。越常用的 id 較小（短）的 id。這使得 id 可以預測，可以減少檔案的大小
+    new webpack.optimize.OccurrenceOrderPlugin()
   ]
 };

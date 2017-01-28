@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "執行 build 指令": "npm run build",
+    "build": "webpack --config webpack.config.prod.js",
+    "執行 dev 指令": "npm run dev",
+    "dev"  : "webpack-dev-server --config webpack.config.dev.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +15,7 @@
     "css-loader": "^0.26.1",
     "html-webpack-plugin": "^2.26.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
